@@ -3,204 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POPI - Blog de Perritos</title>
+    <title>Necesitamos más detalles</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'pastel-green': '#C8E6C9',
-                        'pastel-yellow': '#FFF9C4',
-                    },
-                    fontFamily: {
-                        'display': ['Playfair Display', 'serif'],
-                        'body': ['Libre Baskerville', 'serif'],
+                        ochre: {
+                            50: '#fdf8f3',
+                            100: '#f9ede0',
+                            200: '#f2d9bf',
+                            300: '#e8bf94',
+                            400: '#dc9d67',
+                            500: '#d4824a',
+                            600: '#c66a3f',
+                            700: '#a55336',
+                            800: '#854433',
+                            900: '#6d392c',
+                        }
                     }
                 }
             }
         }
     </script>
-    <style>
-        body { font-family: 'Libre Baskerville', serif; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
-    </style>
 </head>
-<body class="bg-white text-black">
-    <!-- Header -->
-    <header class="border-b-8 border-black py-8 px-6 bg-pastel-yellow">
-        <div class="max-w-5xl mx-auto">
-            <h1 class="text-7xl md:text-9xl font-black font-display tracking-tight">POPI</h1>
-            <p class="text-xl mt-2 font-body">Blog sobre perritos</p>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="max-w-5xl mx-auto px-6 py-12">
-        <!-- Blog List -->
-        <div id="blog-list" class="space-y-12">
-            <!-- Post 1 -->
-            <article class="border-8 border-black p-8 bg-pastel-green hover:translate-x-2 hover:translate-y-2 transition-transform cursor-pointer" onclick="showPost(0)">
-                <h2 class="text-4xl md:text-5xl font-black font-display mb-4">Los mejores juguetes para tu perrito</h2>
-                <p class="text-lg mb-4 font-body">Descubre cuáles son los juguetes más divertidos y seguros para mantener a tu peludo amigo entretenido todo el día.</p>
-                <div class="flex items-center justify-between">
-                    <span class="text-sm font-bold">15 Marzo 2024</span>
-                    <span class="text-2xl font-black">→</span>
+<body class="bg-gradient-to-br from-ochre-50 to-ochre-100 min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-2xl w-full">
+        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+            <div class="bg-gradient-to-r from-ochre-500 to-ochre-600 p-8 text-white">
+                <div class="flex items-center gap-3 mb-2">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <h1 class="text-3xl font-bold">Necesitamos más detalles</h1>
                 </div>
-            </article>
-
-            <!-- Post 2 -->
-            <article class="border-8 border-black p-8 bg-white hover:translate-x-2 hover:translate-y-2 transition-transform cursor-pointer" onclick="showPost(1)">
-                <h2 class="text-4xl md:text-5xl font-black font-display mb-4">Cómo entrenar a tu cachorro</h2>
-                <p class="text-lg mb-4 font-body">Guía completa con los mejores consejos para educar a tu cachorro desde el primer día en casa.</p>
-                <div class="flex items-center justify-between">
-                    <span class="text-sm font-bold">10 Marzo 2024</span>
-                    <span class="text-2xl font-black">→</span>
-                </div>
-            </article>
-
-            <!-- Post 3 -->
-            <article class="border-8 border-black p-8 bg-pastel-yellow hover:translate-x-2 hover:translate-y-2 transition-transform cursor-pointer" onclick="showPost(2)">
-                <h2 class="text-4xl md:text-5xl font-black font-display mb-4">Recetas caseras para perros</h2>
-                <p class="text-lg mb-4 font-body">Prepara deliciosas y nutritivas comidas caseras que tu perrito adorará. 100% naturales y saludables.</p>
-                <div class="flex items-center justify-between">
-                    <span class="text-sm font-bold">5 Marzo 2024</span>
-                    <span class="text-2xl font-black">→</span>
-                </div>
-            </article>
-
-            <!-- Post 4 -->
-            <article class="border-8 border-black p-8 bg-pastel-green hover:translate-x-2 hover:translate-y-2 transition-transform cursor-pointer" onclick="showPost(3)">
-                <h2 class="text-4xl md:text-5xl font-black font-display mb-4">Señales de que tu perro es feliz</h2>
-                <p class="text-lg mb-4 font-body">Aprende a identificar los comportamientos que indican que tu perrito está contento y saludable.</p>
-                <div class="flex items-center justify-between">
-                    <span class="text-sm font-bold">1 Marzo 2024</span>
-                    <span class="text-2xl font-black">→</span>
-                </div>
-            </article>
-        </div>
-
-        <!-- Single Post View (Hidden by default) -->
-        <div id="post-detail" class="hidden">
-            <button onclick="showList()" class="mb-8 text-2xl font-black border-4 border-black px-6 py-3 bg-pastel-yellow hover:translate-x-1 hover:translate-y-1 transition-transform">
-                ← VOLVER
-            </button>
+                <p class="text-ochre-100 text-lg">Para procesar tu solicitud correctamente</p>
+            </div>
             
-            <article class="border-8 border-black p-8 md:p-12 bg-white">
-                <h1 id="post-title" class="text-5xl md:text-7xl font-black font-display mb-6"></h1>
-                <p id="post-date" class="text-sm font-bold mb-8 pb-8 border-b-4 border-black"></p>
-                <div id="post-content" class="prose prose-lg max-w-none font-body space-y-6"></div>
-            </article>
+            <div class="p-8">
+                <div class="bg-ochre-50 border-l-4 border-ochre-500 p-6 mb-6 rounded-r-lg">
+                    <p class="text-gray-700 leading-relaxed">
+                        Hemos recibido tu mensaje, pero necesitamos información adicional para poder ayudarte de manera efectiva.
+                    </p>
+                </div>
+
+                <div class="space-y-4 mb-8">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Por favor, proporciona:</h2>
+                    
+                    <div class="flex items-start gap-3">
+                        <div class="bg-ochre-500 text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span class="text-sm font-bold">1</span>
+                        </div>
+                        <p class="text-gray-700"><strong>Descripción detallada</strong> de tu solicitud o problema</p>
+                    </div>
+                    
+                    <div class="flex items-start gap-3">
+                        <div class="bg-ochre-500 text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span class="text-sm font-bold">2</span>
+                        </div>
+                        <p class="text-gray-700"><strong>Contexto relevante</strong> o información de fondo</p>
+                    </div>
+                    
+                    <div class="flex items-start gap-3">
+                        <div class="bg-ochre-500 text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span class="text-sm font-bold">3</span>
+                        </div>
+                        <p class="text-gray-700"><strong>Objetivo específico</strong> que deseas alcanzar</p>
+                    </div>
+                    
+                    <div class="flex items-start gap-3">
+                        <div class="bg-ochre-500 text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span class="text-sm font-bold">4</span>
+                        </div>
+                        <p class="text-gray-700"><strong>Plazo o urgencia</strong> si aplica</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                    <h3 class="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-ochre-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                        </svg>
+                        Ejemplo de solicitud completa:
+                    </h3>
+                    <p class="text-gray-600 text-sm italic">
+                        "Necesito crear una página web para mi negocio de repostería. Quiero mostrar mi catálogo de productos con fotos, información de contacto y un formulario para pedidos. El diseño debe ser moderno y usar colores cálidos. Necesito tenerlo listo en 2 semanas."
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <a href="mailto:contacto@ejemplo.com" class="flex-1 bg-gradient-to-r from-ochre-500 to-ochre-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-ochre-600 hover:to-ochre-700 transition-all shadow-lg hover:shadow-xl text-center">
+                        Enviar detalles por email
+                    </a>
+                    <button onclick="window.history.back()" class="flex-1 bg-gray-200 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-all text-center">
+                        Volver atrás
+                    </button>
+                </div>
+            </div>
         </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="border-t-8 border-black mt-20 py-8 px-6 bg-pastel-green">
-        <div class="max-w-5xl mx-auto text-center">
-            <p class="text-xl font-bold font-display">POPI © 2024</p>
-            <p class="mt-2">Amor incondicional, una patita a la vez 🐾</p>
-        </div>
-    </footer>
-
-    <script>
-        const posts = [
-            {
-                title: "Los mejores juguetes para tu perrito",
-                date: "15 Marzo 2024",
-                content: `
-                    <p class="text-xl leading-relaxed">Los juguetes son esenciales para el desarrollo físico y mental de tu perrito. No solo los mantienen entretenidos, sino que también ayudan a prevenir comportamientos destructivos.</p>
-                    
-                    <h3 class="text-3xl font-black font-display mt-8 mb-4">Pelotas resistentes</h3>
-                    <p class="text-xl leading-relaxed">Las pelotas de goma dura son perfectas para jugar a buscar. Asegúrate de que sean del tamaño adecuado para evitar riesgos de asfixia.</p>
-                    
-                    <h3 class="text-3xl font-black font-display mt-8 mb-4">Juguetes interactivos</h3>
-                    <p class="text-xl leading-relaxed">Los dispensadores de premios mantienen a tu perro mentalmente estimulado. Son ideales para cuando tienes que dejarlo solo en casa.</p>
-                    
-                    <h3 class="text-3xl font-black font-display mt-8 mb-4">Cuerdas para tirar</h3>
-                    <p class="text-xl leading-relaxed">Perfectas para jugar juntos y fortalecer el vínculo. También ayudan a limpiar sus dientes de forma natural.</p>
-                    
-                    <p class="text-xl leading-relaxed mt-8"><strong>Consejo:</strong> Rota los juguetes cada semana para mantener el interés de tu perrito. ¡La variedad es clave!</p>
-                `
-            },
-            {
-                title: "Cómo entrenar a tu cachorro",
-                date: "10 Marzo 2024",
-                content: `
-                    <p class="text-xl leading-relaxed">Entrenar a un cachorro requiere paciencia, consistencia y mucho amor. Los primeros meses son cruciales para establecer buenos hábitos.</p>
-                    
-                    <h3 class="text-3xl font-black font-display mt-8 mb-4">Comandos básicos</h3>
-                    <p class="text-xl leading-relaxed">Empieza con "siéntate", "ven" y "quieto". Usa refuerzo positivo con premios y elogios. Sesiones cortas de 5-10 minutos son más efectivas.</p>
-                    
-                    <h3 class="text-3xl font-black font-display mt-8 mb-4">Socialización temprana</h3>
-                    <p class="text-xl leading-relaxed">Expón a tu cachorro a diferentes personas, animales y entornos. Esto previene miedos y agresividad en el futuro.</p>
-                    
-                    <h3 class="text-3xl font-black font-display mt-8 mb-4">Establecer rutinas</h3>
-                    <p class="text-xl leading-relaxed">Los cachorros prosperan con rutinas. Horarios fijos para comer, pasear y dormir les dan seguridad y facilitan el entrenamiento.</p>
-                    
-                    <p class="text-xl leading-relaxed mt-8"><strong>Recuerda:</strong> Nunca uses castigos físicos. El refuerzo positivo es siempre más efectivo y fortalece tu relación.</p>
-                `
-            },
-            {
-                title: "Recetas caseras para perros",
-                date: "5 Marzo 2024",
-                content: `
-                    <p class="text-xl leading-relaxed">Preparar comida casera para tu perro puede ser una excelente manera de asegurar que reciba nutrientes de calidad. Aquí te compartimos recetas fáciles y saludables.</p>
-                    
-                    <h3 class="text-3xl font-black font-display mt-8 mb-4">Galletas de mantequilla de maní</h3>
-                    <p class="text-xl leading-relaxed"><strong>Ingredientes:</strong> 2 tazas de harina integral, 1 taza de mantequilla de maní natural, 2 huevos, 1/2 taza de agua.</p>
-                    <p class="text-xl leading-relaxed mt-4">Mezcla todo, forma galletas y hornea a 180°C por 20 minutos. ¡A tu perro le encantarán!</p>
-                    
-                    <h3 class="text-3xl font-black font-display mt-8 mb-4">Estofado nutritivo</h3>
-                    <p class="text-xl leading-relaxed"><strong>Ingredientes:</strong> Pollo sin hueso, arroz integral, zanahorias, guisantes, calabaza.</p>
-                    <p class="text-xl leading-relaxed mt-4">Cocina el pollo, añade las verduras picadas y el arroz. Cocina hasta que todo esté tierno. Sirve en porciones adecuadas.</p>
-                    
-                    <h3 class="text-3xl font-black font-display mt-8 mb-4">Helado canino</h3>
-                    <p class="text-xl leading-relaxed">Mezcla yogur natural sin azúcar con plátano machacado. Congela en moldes. Perfecto para días calurosos.</p>
-                    
-                    <p class="text-xl leading-relaxed mt-8"><strong>Importante:</strong> Evita cebolla, ajo, chocolate, uvas y xilitol. Siempre consulta con tu veterinario antes de cambios dietéticos.</p>
-                `
-            },
-            {
-                title: "Señales de que tu perro es feliz",
-                date: "1 Marzo 2024",
-                content: `
-                    <p class="text-xl leading-relaxed">Los perros no pueden decirnos con palabras cómo se sienten, pero su lenguaje corporal habla volúmenes. Aprende a reconocer las señales de un perro feliz.</p>
-                    
-                    <h3 class="text-3xl font-black font-display mt-8 mb-4">Cola moviéndose</h3>
-                    <p class="text-xl leading-relaxed">Una cola que se mueve ampliamente, especialmente en círculos, indica alegría genuina. La posición relajada es clave.</p>
-                    
-                    <h3 class="text-3xl font-black font-display mt-8 mb-4">Postura corporal relajada</h3>
-                    <p class="text-xl leading-relaxed">Un perro feliz tiene el cuerpo suelto, orejas en posición natural y boca ligeramente abierta. Puede parecer que está "sonriendo".</p>
-                    
-                    <h3 class="text-3xl font-black font-display mt-8 mb-4">Juego e invitaciones</h3>
-                    <p class="text-xl leading-relaxed">La postura de juego (pecho bajo, trasero arriba) es una clara señal de felicidad. Traerte juguetes también muestra confianza y alegría.</p>
-                    
-                    <h3 class="text-3xl font-black font-display mt-8 mb-4">Buen apetito y sueño</h3>
-                    <p class="text-xl leading-relaxed">Un perro feliz come bien y duerme profundamente. Los cambios en estos hábitos pueden indicar estrés o problemas de salud.</p>
-                    
-                    <p class="text-xl leading-relaxed mt-8"><strong>Dato curioso:</strong> Los perros felices a menudo hacen "zoomies" - carreras repentinas y locas por pura alegría.</p>
-                `
-            }
-        ];
-
-        function showPost(index) {
-            const post = posts[index];
-            document.getElementById('post-title').textContent = post.title;
-            document.getElementById('post-date').textContent = post.date;
-            document.getElementById('post-content').innerHTML = post.content;
-            document.getElementById('blog-list').classList.add('hidden');
-            document.getElementById('post-detail').classList.remove('hidden');
-            window.scrollTo(0, 0);
-        }
-
-        function showList() {
-            document.getElementById('blog-list').classList.remove('hidden');
-            document.getElementById('post-detail').classList.add('hidden');
-            window.scrollTo(0, 0);
-        }
-    </script>
+        
+        <p class="text-center text-ochre-700 mt-6 text-sm">
+            Responderemos tu solicitud en un plazo de 24-48 horas
+        </p>
+    </div>
 </body>
 </html>
